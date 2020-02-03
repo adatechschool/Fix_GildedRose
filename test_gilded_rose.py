@@ -30,8 +30,8 @@ class Ragna(unittest.TestCase):
         # self.assertEqual(20, sel_item[5].quality)
         for day in range(days):
             GildedRose(sel_item).update_quality()
-            print(day, " ", sel_item[5].quality)
-        self.assertEqual(0, sel_item[5].quality)
+            print(sel_item[1].sell_in, " ", sel_item[1].quality)
+        # self.assertEqual(0, sel_item[3].quality)
 
 
 if __name__ == '__main__':
