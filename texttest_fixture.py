@@ -47,7 +47,7 @@ class List:
 
 if __name__ == "__main__":
     print ("OMGHAI!")
-    days = 1
+    days = 10
     import sys
     if len(sys.argv) > 1:
         days = int(sys.argv[1]) + 1
