@@ -4,19 +4,35 @@ import unittest
 from gilded_rose import Item, GildedRose
 from texttest_fixture import List
 
+lst = List()
+
 class GildedRoseTest(unittest.TestCase):
     def test_foo(self):
-        lst = List()
         sel_item = lst.itemsl()
-        # print(len(sel_item))
-        # items = [Item("foo", 0, 0)]
+        print(type(sel_item[0]))
+        pre_change = lst.pre_change()
         gilded_rose = GildedRose(sel_item)
         gilded_rose.update_quality()
         for i in range(len(sel_item)):
-            try:
-                self.assertEqual(20, sel_item[i].sell_in)
-            except AssertionError:
-                print("Error, {}".format(sel_item[i].sell_in))
+            # try:
+            self.assertEqual(9, sel_item[i].sell_in)
+                # print("passed")
+            # except AssertionError:
+            #     print("{} Error, {} != {}, {}".format( "AssertionError", pre_change[i], sel_item[i].sell_in, sel_item[i].name))
+
+class Ragna(unittest.TestCase):
+    def test_hand(self):
+        sel_item = lst.itemsl()
+        days = 15
+        # import sys
+        # if len(sys.argv) > 1:
+        #     days = int(sys.argv[1]) + 1
+        # self.assertEqual(20, sel_item[5].quality)
+        for day in range(days):
+            GildedRose(sel_item).update_quality()
+            print(day, " ", sel_item[5].quality)
+        self.assertEqual(0, sel_item[5].quality)
+
 
 if __name__ == '__main__':
     unittest.main()
