@@ -23,11 +23,7 @@ class GildedRoseTest(unittest.TestCase):
 class Ragna(unittest.TestCase):
     def test_hand(self):
         sel_item = lst.itemsl()
-        days = 15
-        # import sys
-        # if len(sys.argv) > 1:
-        #     days = int(sys.argv[1]) + 1
-        # self.assertEqual(20, sel_item[5].quality)
+        days = 200
         for day in range(days):
             GildedRose(sel_item).update_quality()
             print(sel_item[1].sell_in, " ", sel_item[1].quality)
