@@ -1,10 +1,7 @@
 # -*- coding: utf-8 -*-
 import unittest
 
-from gilded_rose import Item, GildedRose
-from texttest_fixture import List
-
-lst = List()
+from old_gilded_rose import Item, GildedRose
 
 class GildedRoseTest(unittest.TestCase):
     def test_brie(self):

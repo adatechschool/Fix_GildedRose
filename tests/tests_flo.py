@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import unittest
 
-from gilded_rose import Item, GildedRose
+from old_gilded_rose import Item, GildedRose
 
 class GildedRoseTest(unittest.TestCase):
     def test_foo(self):
