@@ -18,14 +18,14 @@ items = [
 
 def daily_output():
     gldr = GildedRose(items)
-    days = 30
+    days = 3
     import sys
     errors = []
     if len(sys.argv) > 1:
         days = int(sys.argv[1]) + 1
     for day in range(days):
-        product_out = gldr.update_quality()
         print("-------- day {} --------\n".format(day))
+        product_out = gldr.update_quality(day)
         for item in product_out:
             if len(item) != 1:
                 print("{}:\n\tsell in day: {}\n\tquality: {}\n".format(item[1], item[2], item[3]))

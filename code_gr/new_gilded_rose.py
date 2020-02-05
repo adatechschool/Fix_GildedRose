@@ -10,7 +10,9 @@ class GildedRose():
         self.ind_quality = 3
         return
 
-    def update_quality(self):
+    def update_quality(self, day):
+        if day == 0:
+            return self.item_lst
         for product in range(len(self.item_lst)):
             prod_name = "prod_" + str(self.item_lst[product][0])
             try:
