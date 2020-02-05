@@ -6,6 +6,8 @@ class GildedRose():
     def __init__(self, item_lst):
         self.item_lst = item_lst #structure = [type, name, sell_in, quality]
         self.dcy = Decay()
+        self.ind_sell_in = 2
+        self.ind_quality = 3
         return
 
     def update_quality(self):
@@ -21,48 +23,48 @@ class GildedRose():
 
     def prod_common_items(self, it):
         prod_pre_change = self.item_lst[it]
-        res_normal = self.dcy.normal_dc(prod_pre_change[2], prod_pre_change[3]) #go calc the stuff
-        prod_pre_change[2], prod_pre_change[3] = res_normal[0], res_normal[1] #replace the results
+        res_normal = self.dcy.normal_dc(prod_pre_change[self.ind_sell_in], prod_pre_change[self.ind_quality]) #go calc the stuff
+        prod_pre_change[self.ind_sell_in], prod_pre_change[self.ind_quality] = res_normal[0], res_normal[1] #replace the results
         prdct_print = Item(prod_pre_change)
         prodct_change_ret = prdct_print.out_prodction_text()
         return prodct_change_ret
 
     def prod_cheese(self, it):
         prod_pre_change = self.item_lst[it]
-        res_cheese = self.dcy.cheese_dc(prod_pre_change[2], prod_pre_change[3]) #go calc the stuff
-        prod_pre_change[2], prod_pre_change[3] = res_cheese[0], res_cheese[1] #replace the results
+        res_cheese = self.dcy.cheese_dc(prod_pre_change[self.ind_sell_in], prod_pre_change[self.ind_quality]) #go calc the stuff
+        prod_pre_change[self.ind_sell_in], prod_pre_change[self.ind_quality] = res_cheese[0], res_cheese[1] #replace the results
         prodct = Item(prod_pre_change)
         prodct_change_ret = prodct.out_prodction_text()
         return prodct_change_ret
 
     def prod_elixir(self, it):
         prod_pre_change = self.item_lst[it]
-        res_normal = self.dcy.normal_dc(prod_pre_change[2], prod_pre_change[3]) #go calc the stuff
-        prod_pre_change[2], prod_pre_change[3] = res_normal[0], res_normal[1] #replace the results
+        res_normal = self.dcy.normal_dc(prod_pre_change[self.ind_sell_in], prod_pre_change[self.ind_quality]) #go calc the stuff
+        prod_pre_change[self.ind_sell_in], prod_pre_change[self.ind_quality] = res_normal[0], res_normal[1] #replace the results
         prdct_print = Item(prod_pre_change)
         prodct_change_ret = prdct_print.out_prodction_text()
         return prodct_change_ret
 
     def prod_legendary(self, it):
         prod_pre_change = self.item_lst[it]
-        res_normal = self.dcy.legendary_dc(prod_pre_change[2], prod_pre_change[3]) #go calc the stuff
-        prod_pre_change[2], prod_pre_change[3] = res_normal[0], res_normal[1] #replace the results
+        res_normal = self.dcy.legendary_dc(prod_pre_change[self.ind_sell_in], prod_pre_change[self.ind_quality]) #go calc the stuff
+        prod_pre_change[self.ind_sell_in], prod_pre_change[self.ind_quality] = res_normal[0], res_normal[1] #replace the results
         prdct_print = Item(prod_pre_change)
         prodct_change_ret = prdct_print.out_prodction_text()
         return prodct_change_ret
 
     def prod_ticket(self, it):
         prod_pre_change = self.item_lst[it]
-        res_normal = self.dcy.ticket_dc(prod_pre_change[2], prod_pre_change[3]) #go calc the stuff
-        prod_pre_change[2], prod_pre_change[3] = res_normal[0], res_normal[1] #replace the results
+        res_normal = self.dcy.ticket_dc(prod_pre_change[self.ind_sell_in], prod_pre_change[self.ind_quality]) #go calc the stuff
+        prod_pre_change[self.ind_sell_in], prod_pre_change[self.ind_quality] = res_normal[0], res_normal[1] #replace the results
         prdct_print = Item(prod_pre_change)
         prodct_change_ret = prdct_print.out_prodction_text()
         return prodct_change_ret
 
     def prod_conjured(self, it):
         prod_pre_change = self.item_lst[it]
-        res_cheese = self.dcy.conj_dc(prod_pre_change[2], prod_pre_change[3]) #go calc the stuff
-        prod_pre_change[2], prod_pre_change[3] = res_cheese[0], res_cheese[1] #replace the results
+        res_cheese = self.dcy.conj_dc(prod_pre_change[self.ind_sell_in], prod_pre_change[self.ind_quality]) #go calc the stuff
+        prod_pre_change[self.ind_sell_in], prod_pre_change[self.ind_quality] = res_cheese[0], res_cheese[1] #replace the results
         prodct = Item(prod_pre_change)
         prodct_change_ret = prodct.out_prodction_text()
         return prodct_change_ret
